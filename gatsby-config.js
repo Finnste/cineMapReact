@@ -8,5 +8,13 @@
  * @type {import('gatsby').GatsbyConfig}
  */
 module.exports = {
-  plugins: [],
-}
+  plugins: [ {
+    resolve: 'gatsby-source-graphql',
+    options: {
+      typeName: 'WPGraphQL',
+      fieldName: 'wpgraphql',
+      url: 'http://cinemap.local/graphql'
+
+    }
+  }]
+};

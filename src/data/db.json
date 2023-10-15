@@ -1,0 +1,230 @@
+{
+  "cinemas": [
+    {
+      "id": 1,
+      "name": "RIO",
+      "copy": "The Rio Cinema’s striking art deco frontage has loomed over Kingsland High Street since 1937 – but the cinema’s history stretches back even further to its establishment as the Kingsland Empire in 1909, a small screening room set up by local entrepreneur Clara Ludski. Since then, the Rio has had many guises, specialising at various times in animated films, martial arts movies and even ‘adult’ cinema with live burlesque performers. More than a century on, the Rio remains a cherished community venue and a familiar presence in a corner of London otherwise transformed by gentrification.",
+      "primaryColor": "orange",
+      "secondaryColor": "blue",
+      "textColor": "white",
+      "src": "./models/rio.gltf",
+      "questionsA": [
+        [
+          "come here for?",
+          "The latest independent films",
+          "Queer and feminist screenings, including the weekly ‘Pink Palace’ film club",
+          "Community events"
+        ],
+        [
+          "where to drink nearby?",
+          "Dalston Superstore",
+          "The Railway Tavern"
+        ],
+        [
+          "borough?",
+          "Hackney"
+        ],
+        [
+          "tickets?",
+          "£11.50"
+        ]
+      ],
+      "questionsB": [
+        [
+          "type of organisation?",
+          "Registered charity"
+        ],
+        [
+          "where to eat nearby?",
+          "Voodoo Rays",
+          "Mangal 1",
+          "Cirrik"
+        ],
+        [
+          "other tips?",
+          "Membership",
+          "Cheaper tickets on Mondays"
+        ],
+        [
+          "nearby stations?",
+          "Dalston Kingsland",
+          "Dalston Junction"
+        ]
+      ]
+    },
+    {
+      "id": 1,
+      "name": "THE CASTLE CINEMA",
+      "blurb": "The Castle's striking art deco frontage has loomed over Kingsland High Street since 1937 – but the cinema’s history stretches back even further to its establishment as the Kingsland Empire in 1909, a small screening room set up by local entrepreneur Clara Ludski. Since then, the Rio has had many guises, specialising at various times in animated films, martial arts movies and even ‘adult’ cinema with live burlesque performers. More than a century on, the Rio remains a cherished community venue and a familiar presence in a corner of London otherwise transformed by gentrification.",
+      "firstColor": "#ffe21d",
+      "secondColor": "yellow",
+      "textColor": "white",
+      "src": "./models/castle.gltf",
+      "metas": [
+        {
+          "come here for?": [
+            "The latest independent films",
+            "Queer and feminist screenings, including the weekly ‘Pink Palace’ film club",
+            "Community events"
+          ]
+        },
+        {
+          "where to drink nearby?": [
+            "Dalston Superstore",
+            "The Railway Tavern"
+          ]
+        },
+        {
+          "borough?": [
+            "Hackney"
+          ]
+        },
+        {
+          "tickets?": [
+            "£11.50"
+          ]
+        },
+        {
+          "type of organisation?": [
+            "Registered charity"
+          ]
+        },
+        {
+          "where to eat nearby?": [
+            "Voodoo Rays",
+            "Mangal 1",
+            "Cirrik"
+          ]
+        },
+        {
+          "other tips?": [
+            "Membership",
+            "Cheaper tickets on Mondays"
+          ]
+        },
+        {
+          "nearby stations?": [
+            "Dalston Kingsland",
+            "Dalston Junction"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "name": "THE ACT 2",
+      "blurb": "The Castle's striking art deco frontage has loomed over Kingsland High Street since 1937 – but the cinema’s history stretches back even further to its establishment as the Kingsland Empire in 1909, a small screening room set up by local entrepreneur Clara Ludski. Since then, the Rio has had many guises, specialising at various times in animated films, martial arts movies and even ‘adult’ cinema with live burlesque performers. More than a century on, the Rio remains a cherished community venue and a familiar presence in a corner of London otherwise transformed by gentrification.",
+      "firstColor": "#ffe21d",
+      "secondColor": "red",
+      "textColor": "white",
+      "src": "./models/act2.gltf",
+      "metas": [
+        {
+          "come here for?": [
+            "The latest independent films",
+            "Queer and feminist screenings, including the weekly ‘Pink Palace’ film club",
+            "Community events"
+          ]
+        },
+        {
+          "where to drink nearby?": [
+            "Dalston Superstore",
+            "The Railway Tavern"
+          ]
+        },
+        {
+          "borough?": [
+            "Hackney"
+          ]
+        },
+        {
+          "tickets?": [
+            "£11.50"
+          ]
+        },
+        {
+          "type of organisation?": [
+            "Registered charity"
+          ]
+        },
+        {
+          "where to eat nearby?": [
+            "Voodoo Rays",
+            "Mangal 1",
+            "Cirrik"
+          ]
+        },
+        {
+          "other tips?": [
+            "Membership",
+            "Cheaper tickets on Mondays"
+          ]
+        },
+        {
+          "nearby stations?": [
+            "Dalston Kingsland",
+            "Dalston Junction"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "name": "THE PHOENIX",
+      "blurb": "The Phoenix' striking art deco frontage has loomed over Kingsland High Street since 1937 – but the cinema’s history stretches back even further to its establishment as the Kingsland Empire in 1909, a small screening room set up by local entrepreneur Clara Ludski. Since then, the Rio has had many guises, specialising at various times in animated films, martial arts movies and even ‘adult’ cinema with live burlesque performers. More than a century on, the Rio remains a cherished community venue and a familiar presence in a corner of London otherwise transformed by gentrification.",
+      "firstColor": "#ffe21d",
+      "secondColor": "green",
+      "textColor": "white",
+      "src": "./models/phoenix.gltf",
+      "metas": [
+        {
+          "come here for?": [
+            "The latest independent films",
+            "Queer and feminist screenings, including the weekly ‘Pink Palace’ film club",
+            "Community events"
+          ]
+        },
+        {
+          "where to drink nearby?": [
+            "Dalston Superstore",
+            "The Railway Tavern"
+          ]
+        },
+        {
+          "borough?": [
+            "Hackney"
+          ]
+        },
+        {
+          "tickets?": [
+            "£11.50"
+          ]
+        },
+        {
+          "type of organisation?": [
+            "Registered charity"
+          ]
+        },
+        {
+          "where to eat nearby?": [
+            "Voodoo Rays",
+            "Mangal 1",
+            "Cirrik"
+          ]
+        },
+        {
+          "other tips?": [
+            "Membership",
+            "Cheaper tickets on Mondays"
+          ]
+        },
+        {
+          "nearby stations?": [
+            "Dalston Kingsland",
+            "Dalston Junction"
+          ]
+        }
+      ]
+    }
+  ]
+}
