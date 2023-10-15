@@ -35,32 +35,33 @@ export default function cinema({ data }) {
     ["Borough?", data.borough],
     [
       "Where to Drink Nearby?",
-      data.whereToDrinkNearby[0],
-      data.whereToDrinkNearby[1],
-      data.whereToDrinkNearby[2],
+      data.whereToDrinkNearby.first,
+      data.whereToDrinkNearby.second,
+      data.whereToDrinkNearby.third,
     ],
     [
       "Come Here For?",
-      data.comeHereFor[0],
-      data.comeHereFor[1],
-      data.comeHereFor[2],
+      data.comeHereFor.first,
+      data.comeHereFor.second,
+      data.comeHereFor.third,
     ],
-    ["Tickets?", data.tickets],
+    ["Tickets?", "£" + data.tickets],
   ];
+  console.log(questionsA)
   const questionsB = [
     ["Type of Organisation", data.typeOfOrganisation],
     [
       "Where to Eat Nearby?",
-      data.whereToEatNearby[0],
-      data.whereToEatNearby[1],
-      data.whereToEatNearby[2],
+      data.whereToEatNearby.first,
+      data.whereToEatNearby.second,
+      data.whereToEatNearby.third,
     ],
-    ["Other Tips?", data.otherTips[0], data.otherTips[0], data.otherTips[0]],
+    ["Other Tips?", data.otherTips.first, data.otherTips.second, data.otherTips.third],
     [
       "Nearby Stations?",
-      data.nearbyStations[0],
-      data.nearbyStations[1],
-      data.nearbyStations[2],
+      data.nearbyStations.first,
+      data.nearbyStations.second,
+      data.nearbyStations.third,
     ],
   ];
   const colors = [data.primaryColor, data.secondaryColor];
@@ -80,7 +81,7 @@ export default function cinema({ data }) {
     <div>
       <FontStyles />
       <Wrapper>
-        <Model colors={colors} />
+        <Model colors={colors} name={data.name.replace(/\s/g, "").toLowerCase()}/>
         <ColumnWrapper>
           <Column>
             {questionsA.map((questionsA, index) => (

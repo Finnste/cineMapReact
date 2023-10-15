@@ -23,7 +23,9 @@ const ModelWrapper = styled.div`
 `;
 
 const Obj = (props) => {
-  const gltf = useLoader(GLTFLoader, "../rio.gltf");
+  console.log(props.name)
+  const url = "/" + props.name + ".gltf";
+  const gltf = useLoader(GLTFLoader, url);
   var model = gltf.scene;
   const geo = [model.children[0].geometry];
 
@@ -42,7 +44,7 @@ export default function Model(props) {
     <ModelWrapper>
       <Canvas style={{height: "100vh", width: "100vw", margin: "0" }}>
         <CameraController />
-        <Obj colors={props.colors} />
+        <Obj colors={props.colors} name={props.name}/>
       </Canvas>
     </ModelWrapper>
   );

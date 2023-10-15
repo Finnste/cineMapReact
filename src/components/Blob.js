@@ -37,20 +37,20 @@ const Question = styled.h1`
   box-shadow: 0 0 5px var(--secondary-color);
   border-radius: 2rem;
   @media screen and (min-aspect-ratio: 2000/1000) {
-          font-size: .9vw;
-      }
-      @media screen and (min-aspect-ratio: 2000/900) {
-          font-size: .8vw;
-      }
-      @media screen and (min-aspect-ratio: 2000/800) {
-          font-size: .7vw;
-      }
-      @media screen and (min-aspect-ratio: 2000/700) {
-          font-size: .6vw;
-      }
-      @media screen and (min-aspect-ratio: 2000/600) {
-          font-size: .5vw;
-      }
+    font-size: 0.9vw;
+  }
+  @media screen and (min-aspect-ratio: 2000/900) {
+    font-size: 0.8vw;
+  }
+  @media screen and (min-aspect-ratio: 2000/800) {
+    font-size: 0.7vw;
+  }
+  @media screen and (min-aspect-ratio: 2000/700) {
+    font-size: 0.6vw;
+  }
+  @media screen and (min-aspect-ratio: 2000/600) {
+    font-size: 0.5vw;
+  }
 `;
 
 const AnswersContainer = styled.div`
@@ -73,28 +73,32 @@ const Answer = styled.p`
   -moz-box-shadow: 0 0 5px inherit;
   box-shadow: 0 0 5px var(--secondary-color);
   @media screen and (min-aspect-ratio: 2000/1000) {
-          font-size: .9vw;
-      }
-      @media screen and (min-aspect-ratio: 2000/900) {
-          font-size: .8vw;
-      }
-      @media screen and (min-aspect-ratio: 2000/800) {
-          font-size: .7vw;
-      }
-      @media screen and (min-aspect-ratio: 2000/700) {
-          font-size: .6vw;
-      }
-      @media screen and (min-aspect-ratio: 2000/600) {
-          font-size: .5vw;
-      }
+    font-size: 0.9vw;
+  }
+  @media screen and (min-aspect-ratio: 2000/900) {
+    font-size: 0.8vw;
+  }
+  @media screen and (min-aspect-ratio: 2000/800) {
+    font-size: 0.7vw;
+  }
+  @media screen and (min-aspect-ratio: 2000/700) {
+    font-size: 0.6vw;
+  }
+  @media screen and (min-aspect-ratio: 2000/600) {
+    font-size: 0.5vw;
+  }
 `;
 
 const Blob = (props) => {
   const question = props.question;
   var answers = props.question;
   const colors = props.colors;
-  console.log(colors[0]);
   answers = answers.slice(1, answers.length);
+  for (var i = 0; i < answers.length; i++) {
+    if (answers[i] == null) {
+      answers.splice(i, 1);
+    }
+  }
   return (
     <div>
       <FontStyles />
