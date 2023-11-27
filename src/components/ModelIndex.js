@@ -3,8 +3,7 @@ import { Canvas, useThree, useLoader } from "@react-three/fiber";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { View, PerspectiveCamera, OrbitControls } from "@react-three/drei";
 import useRefs from "react-use-refs";
-import styled from "styled-components";
-import "../pages/styles.css";
+import "../styles/modelIndexStyles.css";
 
 const Obj = (props) => {
   const url = "/" + props.name + ".gltf";
@@ -86,7 +85,7 @@ export default function Modelindex(props) {
       rotation: [-1.5, 0, 0],
       scale: [0.1, 0.1, 0.1],
       view: view4,
-      color: "red",
+      color: "yellow",
     },
     {
       name: "peckhamplex",
@@ -97,18 +96,18 @@ export default function Modelindex(props) {
       color: "green",
     },
     {
-      name: "act2",
-      position: [-4, -2, 0],
-      rotation: [0, -2, 0],
+      name: "lumiere",
+      position: [0, -0.3, 3],
+      rotation: [0, -1.5, 0],
       scale: [1, 1, 1],
       view: view6,
       color: "red",
     },
     {
-      name: "act2",
-      position: [-4, -2, 0],
-      rotation: [0, -2, 0],
-      scale: [1, 1, 1],
+      name: "phoenix",
+      position: [0, 0, 0],
+      rotation: [1.5, 0, -1.5],
+      scale: [0.1, 0.1, 0.1],
       view: view7,
       color: "red",
     },
@@ -263,7 +262,7 @@ export default function Modelindex(props) {
       {cinemaModels.map((item, index) => {
         console.log(item.view);
         return <div ref={item.view} className="view" key={index}>
-          <h2 class="cinemaName">{item.name}</h2>
+          <h2 className="cinemaName">{item.name}</h2>
         </div>;
       })}
 

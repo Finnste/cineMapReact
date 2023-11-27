@@ -3,7 +3,6 @@ import { Canvas, useThree } from "@react-three/fiber";
 import { useLoader } from "@react-three/fiber";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
-import styled from "styled-components";
 
 const CameraController = () => {
   const { camera, gl } = useThree();
@@ -18,9 +17,6 @@ const CameraController = () => {
   }, [camera, gl]);
   return null;
 };
-
-const ModelWrapper = styled.div`
-`;
 
 const Obj = (props) => {
   console.log(props.name)
@@ -41,11 +37,11 @@ const Obj = (props) => {
 
 export default function ModelSingle(props) {
   return (
-    <ModelWrapper>
+    <div>
       <Canvas style={{height: "100vh", width: "100vw", margin: "0" }}>
         <CameraController />
         <Obj colors={props.colors} name={props.name}/>
       </Canvas>
-    </ModelWrapper>
+    </div>
   );
 }

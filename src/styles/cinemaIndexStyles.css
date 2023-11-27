@@ -1,0 +1,28 @@
+.titleBlock {
+  top: 40%;
+  left: 50%;
+  -ms-transform: translateY(-50%) translateX(-50%);
+  transform: translateY(-50%) translateX(-50%);
+  position: absolute;
+  width: max-content;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.title {
+  font-family: PINUP;
+  font-size: 5em;
+  -webkit-text-stroke: 2px white;
+}
+
+.titleCopy {
+  font-family: PINUP;
+  font-size: 1em;
+  text-align: center;
+  line-height: 1;
+}
+
+.indexWrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
