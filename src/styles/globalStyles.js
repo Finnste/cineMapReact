@@ -13,8 +13,16 @@ const FontStyles = createGlobalStyle`
   background-color: grey;
   margin: 0;
   background: #dadada;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   }
+
+  .title  {
+    font-family: PINUP;
+    font-size: 5em;
+    text-align: center;
+  };
+
+
   `;
 
 export default FontStyles;

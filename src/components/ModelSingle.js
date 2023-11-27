@@ -39,7 +39,7 @@ const Obj = (props) => {
   );
 };
 
-export default function Model(props) {
+export default function ModelSingle(props) {
   return (
     <ModelWrapper>
       <Canvas style={{height: "100vh", width: "100vw", margin: "0" }}>

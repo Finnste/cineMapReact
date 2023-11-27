@@ -4,32 +4,10 @@ import { graphql } from "gatsby";
 import styled from "styled-components";
 import Blob from "../components/Blob";
 import Blurb from "../components/Blurb";
-import Model from "../components/Model";
-
-const ColumnWrapper = styled.div`
-  display: flex;
-  justify-content: space-evenly;
-  gap: 30px;
-  width: 90%;
-  margin: 0 auto;
-  text-align: center;
-  position: absolute;
-  z-index: 10;
-  top: 0;
-  pointer-events: none;
-`;
-
-const Column = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 33vw;
-  text-align: center;
-  max-height: 90vh;
-`;
+import ModelSingle from "../components/ModelSingle";
 
 export default function cinema({ data }) {
-  data = data.wpgraphql.cinemas.nodes[0].cinema;
+  data = data.wpgraphql.cinemas.nodes[1].cinema;
   console.log(data.whereToDrinkNearby);
   const questionsA = [
     ["Borough?", data.borough],
@@ -47,7 +25,7 @@ export default function cinema({ data }) {
     ],
     ["Tickets?", "£" + data.tickets],
   ];
-  console.log(questionsA)
+  console.log(questionsA);
   const questionsB = [
     ["Type of Organisation", data.typeOfOrganisation],
     [
@@ -56,7 +34,12 @@ export default function cinema({ data }) {
       data.whereToEatNearby.second,
       data.whereToEatNearby.third,
     ],
-    ["Other Tips?", data.otherTips.first, data.otherTips.second, data.otherTips.third],
+    [
+      "Other Tips?",
+      data.otherTips.first,
+      data.otherTips.second,
+      data.otherTips.third,
+    ],
     [
       "Nearby Stations?",
       data.nearbyStations.first,
@@ -77,11 +60,36 @@ export default function cinema({ data }) {
     position: relative;
   `;
 
+  const ColumnWrapper = styled.div`
+    display: flex;
+    justify-content: space-evenly;
+    gap: 30px;
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    pointer-events: none;
+  `;
+
+  const Column = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 33vw;
+    text-align: center;
+    max-height: 90vh;
+  `;
+
   return (
     <div>
       <FontStyles />
       <Wrapper>
-        <Model colors={colors} name={data.name.replace(/\s/g, "").toLowerCase()}/>
+        <ModelSingle
+          colors={colors}
+          name={data.name.replace(/\s/g, "").toLowerCase()}
+        />
         <ColumnWrapper>
           <Column>
             {questionsA.map((questionsA, index) => (
@@ -104,50 +112,48 @@ export default function cinema({ data }) {
 }
 
 export const query = graphql`
-query cinemaQuery {
-  wpgraphql {
-    cinemas {
-      nodes {
-        cinema {
-          name
-					primaryColor
-          secondaryColor
-          blurb
-          borough
-          tickets
-          nearbyStations {
-            first
-            second
-            third
+  query cinemaQuery {
+    wpgraphql {
+      cinemas {
+        nodes {
+          cinema {
+            name
+            primaryColor
+            secondaryColor
+            blurb
+            borough
+            tickets
+            nearbyStations {
+              first
+              second
+              third
+            }
+            otherTips {
+              first
+              second
+              third
+            }
+
+            typeOfOrganisation
+            whereToDrinkNearby {
+              first
+              second
+              third
+            }
+            whereToEatNearby {
+              first
+              second
+              third
+            }
+
+            comeHereFor {
+              first
+              third
+              second
+            }
           }
-          otherTips {
-            first
-            second
-            third
-          }
-          
-          typeOfOrganisation
-          whereToDrinkNearby {
-            first
-            second
-            third
-          }
-          whereToEatNearby {
-            first
-            second
-            third
-          }
-          
-          comeHereFor {
-            first
-            third
-            second
-          }
-          
         }
       }
     }
   }
-}
-
-`
+`;
