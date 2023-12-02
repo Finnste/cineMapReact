@@ -2,7 +2,7 @@
   --primary-color: ${(props) => props.colors[0]};
   --secondary-color: ${(props) => props.colors[1]};
   font-family: PINUP;
-  text-shadow: 0 0 2px #000;
+  /* text-shadow: 0 0 0px #000; */
   overflow: scroll;
   background-color: var(--primary-color);
   padding: 1em;
@@ -11,7 +11,7 @@
   border: 4px solid var(--secondary-color);
   -webkit-box-shadow: 0 0 5px var(--secondary-color);
   -moz-box-shadow: 0 0 5px var(--secondary-color);
-  box-shadow: 0 0 5px var(--secondary-color);
+  /* box-shadow: 0 0 5px var(--secondary-color); */
   border-radius: 2rem;
   text-align: center;
   scrollbar-width: none; /* for Firefox */
