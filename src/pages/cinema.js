@@ -11,10 +11,12 @@ const Cinema = ({ data, location }) => {
   var cinemaData = data.wpgraphql.cinemas.nodes[2].cinema;
   var cinemaIndex = 0;
   var locationProp = null
-  if (location && location.state && location.state.access) {
+  if (location.state) {
     locationProp = location.state.cinemaName;
   }
   while (i--) {
+    console.log(data.wpgraphql.cinemas.nodes[i].cinema.name)
+    console.log("l" + locationProp)
     if (data.wpgraphql.cinemas.nodes[i].cinema.name === locationProp) {
       cinemaData = data.wpgraphql.cinemas.nodes[i].cinema;
       cinemaIndex = i;
