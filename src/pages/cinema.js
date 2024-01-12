@@ -4,28 +4,23 @@ import { graphql, Link } from "gatsby";
 import Blob from "../components/Blob";
 import Blurb from "../components/Blurb";
 import ModelSingle from "../components/ModelSingle";
-import { useLocation } from "react-router-dom";
 import "../styles/cinemaStyles.css";
 
 const Cinema = ({ data, location }) => {
   var i = data.wpgraphql.cinemas.nodes.length;
   var cinemaData = data.wpgraphql.cinemas.nodes[2].cinema;
   var cinemaIndex = 0;
+  var locationProp = null
+  if (location && location.state && location.state.access) {
+    locationProp = location.state.cinemaName;
+  }
   while (i--) {
-    console.log(data.wpgraphql.cinemas.nodes[i].cinema.name);
-    console.log(location.state.cinemaName);
-    console.log("break");
-    if (
-      data.wpgraphql.cinemas.nodes[i].cinema.name === location.state.cinemaName
-    ) {
-      console.log("success");
+    if (data.wpgraphql.cinemas.nodes[i].cinema.name === locationProp) {
       cinemaData = data.wpgraphql.cinemas.nodes[i].cinema;
-      console.log("index: " + i);
       cinemaIndex = i;
       break;
     }
   }
-
 
   const questionsA = [
     ["Borough?", cinemaData.borough],
@@ -43,7 +38,6 @@ const Cinema = ({ data, location }) => {
     ],
     ["Tickets?", "£" + cinemaData.tickets],
   ];
-  console.log(questionsA);
   const questionsB = [
     [
       "Acessability?",
@@ -94,7 +88,13 @@ const Cinema = ({ data, location }) => {
               pointerEvents: "none",
             }}
           >
-            <div style={{ display: "flex", justifyContent: "space-between", pointerEvents: 'auto' }}>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                pointerEvents: "auto",
+              }}
+            >
               <Link
                 to="/cinema"
                 state={{
@@ -148,24 +148,23 @@ export default Cinema;
 const checkIndex = function (data, a, i) {
   console.log("check" + a);
   // check for lower end of array
-  if (a == 1) {
-    if (i == 0) {
-      const x = (data.wpgraphql.cinemas.nodes.length - 1);
+  if (a === 1) {
+    if (i === 0) {
+      const x = data.wpgraphql.cinemas.nodes.length - 1;
       return data.wpgraphql.cinemas.nodes[x].cinema.name;
     } else {
-      return data.wpgraphql.cinemas.nodes[i-1].cinema.name;
+      return data.wpgraphql.cinemas.nodes[i - 1].cinema.name;
     }
   }
   // check for upper end of array
   else {
-    if (i == (data.wpgraphql.cinemas.nodes.length - 1)) {
+    if (i === data.wpgraphql.cinemas.nodes.length - 1) {
       return data.wpgraphql.cinemas.nodes[0].cinema.name;
     } else {
-      return data.wpgraphql.cinemas.nodes[i+1].cinema.name;
+      return data.wpgraphql.cinemas.nodes[i + 1].cinema.name;
     }
   }
 };
-
 
 export const query = graphql`
   query cinemaQuery {

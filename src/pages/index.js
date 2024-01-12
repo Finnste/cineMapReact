@@ -1,10 +1,11 @@
-import * as React from "react";
 import { useEffect } from 'react';
 import { navigate } from 'gatsby';
 
-export default () => {
+const Index = () => {
   useEffect(() => {
     navigate('/cinema-index');
   }, []);
   return null;
 };
+
+export default Index;

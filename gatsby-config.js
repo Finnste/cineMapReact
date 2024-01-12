@@ -8,13 +8,17 @@
  * @type {import('gatsby').GatsbyConfig}
  */
 module.exports = {
-  plugins: [ {
-    resolve: 'gatsby-source-graphql',
-    options: {
-      typeName: 'WPGraphQL',
-      fieldName: 'wpgraphql',
-      url: 'https://finn-steffens.de/wp/graphql'
-
-    }
-  }]
+  plugins: [
+    {
+      resolve: "gatsby-source-graphql",
+      options: {
+        typeName: "WPGraphQL",
+        fieldName: "wpgraphql",
+        url: "https://finn-steffens.de/wp/graphql",
+      },
+    },
+  ],
+  flags: {
+    DEV_SSR: true,
+  },
 };
