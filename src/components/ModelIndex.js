@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { Link } from "gatsby";
 import { Canvas, useThree, useLoader } from "@react-three/fiber";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { View, PerspectiveCamera, OrbitControls } from "@react-three/drei";
@@ -51,7 +52,7 @@ export default function Modelindex(props) {
     view22,
     view23,
     view24,
-    view25
+    view25,
   ] = useRefs();
 
   const cinemaModels = [
@@ -91,7 +92,7 @@ export default function Modelindex(props) {
       name: "peckhamplex",
       position: [0, 0, 0],
       rotation: [1.5, 0, 0],
-      scale: [5,5,5],
+      scale: [5, 5, 5],
       view: view5,
       color: "green",
     },
@@ -254,16 +255,26 @@ export default function Modelindex(props) {
       scale: [-0.4, -0.4, -0.4],
       view: view25,
       color: "green",
-    }
+    },
   ];
 
   return (
     <div ref={container} className="container">
       {cinemaModels.map((item, index) => {
         console.log(item.view);
-        return <div ref={item.view} className="view" key={index}>
-          <h2 className="cinemaName">{item.name}</h2>
-        </div>;
+        return (
+          <Link
+            to="/cinema"
+            state={{ cinemaName: "Rio Cinema" }}
+            style={{
+              margin: "0px",
+            }}
+          >
+            <div ref={item.view} className="view" key={index}>
+              <h2 className="cinemaName">{item.name}</h2>
+            </div>
+          </Link>
+        );
       })}
 
       <Canvas eventSource={container} className="canvas">

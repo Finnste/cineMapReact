@@ -1,14 +1,21 @@
-import React from "react";
+import * as React from "react";
 import FontStyles from "../styles/globalStyles";
 import { graphql } from "gatsby";
 import Blob from "../components/Blob";
 import Blurb from "../components/Blurb";
 import ModelSingle from "../components/ModelSingle";
+import { useLocation } from 'react-router-dom';
 import "../styles/cinemaStyles.css";
 
-export default function cinema({ data }) {
-  console.log(data.wpgraphql);
-  data = data.wpgraphql.cinemas.nodes[1].cinema;
+
+const Cinema = ({ data, location }) => {
+  var i = data.wpgraphql.cinemas.nodes.length;
+  while (i--) {
+    if (data.wpgraphql.cinemas.nodes[i].cinema.name === location.state.cinemaName) {
+      data = data.wpgraphql.cinemas.nodes[i].cinema;
+    }
+  }
+
   const questionsA = [
     ["Borough?", data.borough],
     [
@@ -78,6 +85,8 @@ export default function cinema({ data }) {
     </div>
   );
 }
+
+export default Cinema
 
 export const query = graphql`
   query cinemaQuery {

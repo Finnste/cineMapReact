@@ -69,9 +69,13 @@ body {
   overflow: hidden;
   position: relative;
   padding: 0;
-  border: 2px solid black;
+  margin: 0;
+  /* border: 2px solid black; */
   border-radius: 8px;
-  box-shadow: inset 4px 4px 4px black;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  /* box-shadow: inset 4px 4px 4px black; */
 }
 
 .view:hover .cinemaName {
