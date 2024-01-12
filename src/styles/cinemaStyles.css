@@ -7,14 +7,14 @@
 .wrapper {
   position: relative;
   margin-top: 2em;
-
+  pointer-events: none;
 }
 
 .columnWrapper {
   display: flex;
   justify-content: space-evenly;
   gap: 30px;
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
   text-align: center;
   position: absolute;

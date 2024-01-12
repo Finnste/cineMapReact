@@ -17,7 +17,7 @@ function Home() {
         <div className="titleBlock">
           <div className="title">Cinemap London</div>
           <div className="titleCopy">
-            This website is a compendium of all 27 independent cinemas in
+            This website is a compendium of all 25 independent cinemas in
             London.
           </div>
         </div>

@@ -16,6 +16,7 @@
   -moz-box-shadow: 0 0 5px var(--secondary-color);
   box-shadow: 0 0 5px var(--secondary-color);
   justify-content: center;
+  pointer-events: none;
 }
 
 .question {

@@ -1,61 +1,77 @@
 import * as React from "react";
 import FontStyles from "../styles/globalStyles";
-import { graphql } from "gatsby";
+import { graphql, Link } from "gatsby";
 import Blob from "../components/Blob";
 import Blurb from "../components/Blurb";
 import ModelSingle from "../components/ModelSingle";
-import { useLocation } from 'react-router-dom';
+import { useLocation } from "react-router-dom";
 import "../styles/cinemaStyles.css";
-
 
 const Cinema = ({ data, location }) => {
   var i = data.wpgraphql.cinemas.nodes.length;
+  var cinemaData = data.wpgraphql.cinemas.nodes[2].cinema;
+  var cinemaIndex = 0;
   while (i--) {
-    if (data.wpgraphql.cinemas.nodes[i].cinema.name === location.state.cinemaName) {
-      data = data.wpgraphql.cinemas.nodes[i].cinema;
+    console.log(data.wpgraphql.cinemas.nodes[i].cinema.name);
+    console.log(location.state.cinemaName);
+    console.log("break");
+    if (
+      data.wpgraphql.cinemas.nodes[i].cinema.name === location.state.cinemaName
+    ) {
+      console.log("success");
+      cinemaData = data.wpgraphql.cinemas.nodes[i].cinema;
+      console.log("index: " + i);
+      cinemaIndex = i;
+      break;
     }
   }
 
+
   const questionsA = [
-    ["Borough?", data.borough],
+    ["Borough?", cinemaData.borough],
     [
       "Where to Drink Nearby?",
-      data.whereToDrinkNearby.first,
-      data.whereToDrinkNearby.second,
-      data.whereToDrinkNearby.third,
+      cinemaData.whereToDrinkNearby.first,
+      cinemaData.whereToDrinkNearby.second,
+      cinemaData.whereToDrinkNearby.third,
     ],
     [
       "Come Here For?",
-      data.comeHereFor.first,
-      data.comeHereFor.second,
-      data.comeHereFor.third,
+      cinemaData.comeHereFor.first,
+      cinemaData.comeHereFor.second,
+      cinemaData.comeHereFor.third,
     ],
-    ["Tickets?", "£" + data.tickets],
+    ["Tickets?", "£" + cinemaData.tickets],
   ];
   console.log(questionsA);
   const questionsB = [
-    ["Type of Organisation", data.typeOfOrganisation],
+    [
+      "Acessability?",
+      cinemaData.access.first,
+      cinemaData.access.second,
+      cinemaData.access.third,
+    ],
     [
       "Where to Eat Nearby?",
-      data.whereToEatNearby.first,
-      data.whereToEatNearby.second,
-      data.whereToEatNearby.third,
+      cinemaData.whereToEatNearby.first,
+      cinemaData.whereToEatNearby.second,
+      cinemaData.whereToEatNearby.third,
     ],
     [
       "Other Tips?",
-      data.otherTips.first,
-      data.otherTips.second,
-      data.otherTips.third,
+      cinemaData.otherTips.first,
+      cinemaData.otherTips.second,
+      cinemaData.otherTips.third,
     ],
     [
       "Nearby Stations?",
-      data.nearbyStations.first,
-      data.nearbyStations.second,
-      data.nearbyStations.third,
+      cinemaData.nearbyStations.first,
+      cinemaData.nearbyStations.second,
+      cinemaData.nearbyStations.third,
     ],
   ];
-  const colors = [data.primaryColor, data.secondaryColor];
-  const copy = data.blurb;
+  const colors = [cinemaData.primaryColor, cinemaData.secondaryColor];
+  const copy = cinemaData.blurb;
 
   return (
     <div>
@@ -63,7 +79,7 @@ const Cinema = ({ data, location }) => {
       <div className="wrapper">
         <ModelSingle
           colors={colors}
-          name={data.name.replace(/\s/g, "").toLowerCase()}
+          name={cinemaData.name.replace(/\s/g, "").toLowerCase()}
         />
         <div className="columnWrapper">
           <div className="column">
@@ -71,8 +87,48 @@ const Cinema = ({ data, location }) => {
               <Blob key={index} question={questionsA} colors={colors}></Blob>
             ))}
           </div>
-          <div className="column" style={{ marginTop: 20 + "px" }}>
-            <div className="title">{data.name}</div>
+          <div
+            className="column"
+            style={{
+              marginTop: 20 + "px",
+              pointerEvents: "none",
+            }}
+          >
+            <div style={{ display: "flex", justifyContent: "space-between", pointerEvents: 'auto' }}>
+              <Link
+                to="/cinema"
+                state={{
+                  cinemaName: checkIndex(data, 1, cinemaIndex),
+                }}
+                style={{
+                  textDecoration: "none",
+                  color: "black",
+                  fontSize: "4em",
+                }}
+              >
+                &larr;
+              </Link>
+
+              <Link
+                to="/cinema-index"
+                style={{ textDecoration: "none", color: "black" }}
+              >
+                <div className="title">{cinemaData.name}</div>
+              </Link>
+              <Link
+                to="/cinema"
+                state={{
+                  cinemaName: checkIndex(data, 2, cinemaIndex),
+                }}
+                style={{
+                  textDecoration: "none",
+                  color: "black",
+                  fontSize: "4em",
+                }}
+              >
+                &rarr;
+              </Link>
+            </div>
             <Blurb copy={copy} colors={colors}></Blurb>
           </div>
           <div className="column">
@@ -84,9 +140,32 @@ const Cinema = ({ data, location }) => {
       </div>
     </div>
   );
-}
+};
 
-export default Cinema
+export default Cinema;
+
+// function to check if next / previous cinema is out of bound of cinema array
+const checkIndex = function (data, a, i) {
+  console.log("check" + a);
+  // check for lower end of array
+  if (a == 1) {
+    if (i == 0) {
+      const x = (data.wpgraphql.cinemas.nodes.length - 1);
+      return data.wpgraphql.cinemas.nodes[x].cinema.name;
+    } else {
+      return data.wpgraphql.cinemas.nodes[i-1].cinema.name;
+    }
+  }
+  // check for upper end of array
+  else {
+    if (i == (data.wpgraphql.cinemas.nodes.length - 1)) {
+      return data.wpgraphql.cinemas.nodes[0].cinema.name;
+    } else {
+      return data.wpgraphql.cinemas.nodes[i+1].cinema.name;
+    }
+  }
+};
+
 
 export const query = graphql`
   query cinemaQuery {
@@ -110,7 +189,11 @@ export const query = graphql`
               second
               third
             }
-
+            access {
+              first
+              second
+              third
+            }
             typeOfOrganisation
             whereToDrinkNearby {
               first
@@ -127,6 +210,9 @@ export const query = graphql`
               first
               third
               second
+            }
+            model {
+              id
             }
           }
         }

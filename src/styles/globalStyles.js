@@ -7,12 +7,18 @@ const FontStyles = createGlobalStyle`
     font-family: PINUP;
     src: url(${PIN}) format('woff');
       }
-    }
+    -ms-overflow-style: none;
+  }
+  
+    ::-webkit-scrollbar {
+    display: none;
+  }
 
   body {
   background-color: grey;
   margin: 0;
   background: #dadada;
+  overflow: hidden;
   /* border: 1px solid red; */
   }
 
@@ -21,7 +27,6 @@ const FontStyles = createGlobalStyle`
     font-size: 5em;
     text-align: center;
   };
-
 
   `;
 

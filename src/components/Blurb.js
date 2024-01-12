@@ -19,7 +19,7 @@ const BlurbContainer = styled.div`
   text-align: center;
   scrollbar-width: none; /* for Firefox */
   overflow-y: scroll;
-  pointer-events: auto;
+  pointer-events: none;
   @media screen and (min-aspect-ratio: 2000/1000) {
     font-size: 1vw;
   }

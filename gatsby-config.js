@@ -13,7 +13,7 @@ module.exports = {
     options: {
       typeName: 'WPGraphQL',
       fieldName: 'wpgraphql',
-      url: 'http://cinemap.local/graphql'
+      url: 'https://finn-steffens.de/wp/graphql'
 
     }
   }]

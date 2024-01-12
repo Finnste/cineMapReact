@@ -7,7 +7,7 @@
       "primaryColor": "orange",
       "secondaryColor": "blue",
       "textColor": "white",
-      "src": "./models/rio.gltf",
+      "src": "./models/riocinema.gltf",
       "questionsA": [
         [
           "come here for?",
@@ -117,7 +117,7 @@
       "firstColor": "#ffe21d",
       "secondColor": "red",
       "textColor": "white",
-      "src": "./models/act2.gltf",
+      "src": "./models/actonecinema.gltf",
       "metas": [
         {
           "come here for?": [
