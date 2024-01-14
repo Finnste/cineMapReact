@@ -8,16 +8,18 @@ const Navbar = () => {
     <div>
       <FontStyles />
       <nav className="navbar">
-        <div className="item headerTitle">
-          <p id="mainTitle">CINEMAP</p>
-          <p id="subTitle">
+        <div className="headerTitle">
+          <div id="mainTitle">
+           CINEMAP
+          </div>
+          <div id="subTitle">
             A Collaborative Archive of London's 25 Independent Cinemas
-          </p>
+          </div>
         </div>
-        <div className="item item2">HELLO</div>
-        <div className="item item3">MAP</div>
-        <div className="item index">INDEX</div>
-      </nav>{" "}
+        <div className="item">MAP</div>
+        <div className="item">INDEX</div>
+        <div className="item">ADD TO THE ARCHIVE</div>
+      </nav>
     </div>
   );
 };

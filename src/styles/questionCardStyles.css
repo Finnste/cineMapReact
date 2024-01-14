@@ -1,0 +1,33 @@
+.questionCard {
+  border: 2px solid white;
+  padding: 0 0.6em;
+  margin: 1em 0;
+}
+
+.questionTitle {
+  font-family: PINUP;
+  font-size: 1em;
+  color: white;
+  padding-bottom: 1em;
+}
+
+.questionAnswer {
+  font-family: PINUP;
+  font-size: 0.8em;
+  color: black;
+  text-align: left;
+  background-color: white;
+  border-radius: 5px;
+  padding: 0.6em 1em;
+  width: max-content;
+  max-width: 70%;
+  margin-bottom: 2em;
+  /* overflow: wrap; */
+}
+
+.right {
+  text-align: right;
+  align-items: end;
+  margin-right: 0;
+  margin-left: auto;
+}

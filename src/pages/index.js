@@ -3,7 +3,7 @@ import { navigate } from 'gatsby';
 
 const Index = () => {
   useEffect(() => {
-    navigate('/cinema-index');
+    navigate('/cinema-archive');
   }, []);
   return null;
 };

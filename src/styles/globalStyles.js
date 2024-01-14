@@ -15,11 +15,8 @@ const FontStyles = createGlobalStyle`
   }
 
   body {
-  background-color: grey;
   margin: 0;
-  background: #dadada;
   overflow: hidden;
-  /* border: 1px solid red; */
   }
 
   .title  {

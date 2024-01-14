@@ -1,0 +1,15 @@
+.blurb {
+  font-family: PINUP;
+  font-size: 0.8em;
+  color: black;
+  background-color: white;
+  text-align: left;
+  padding: 0.6em;
+}
+
+.blurb:hover {
+    /* color: white;
+    background-color: black;
+    border: 1px solid  white;
+     */
+}

@@ -1,0 +1,30 @@
+body {
+  background: black;
+}
+
+.title {
+  font-family: PINUP;
+  font-size: 5em;
+  text-align: center;
+}
+
+.columnWrapper {
+  position: relative;
+  display: flex;
+  justify-content: space-evenly;
+  gap: 4rem;
+  width: 100%;
+  overflow: scroll;
+
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  width: 20vw;
+  height: 90vh;
+  text-align: center;
+  /* border: 2px solid white; */
+  overflow: scroll;
+}

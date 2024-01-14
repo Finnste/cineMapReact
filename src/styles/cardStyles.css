@@ -1,0 +1,7 @@
+.cardWrapper {
+    max-width: 100%;
+    height: auto;
+    padding: 1em 2em;
+    text-align: center;
+    /* border: 2px solid white; */
+}

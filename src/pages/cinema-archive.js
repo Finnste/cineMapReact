@@ -45,42 +45,8 @@ const cinemaArchive = () => {
   return (
     <div className="archiveBody">
       <Navbar />
-      <div className="archiveColumnWrapper">
-        <div className="archiveColumn">
-          <ArchiveModel url={cinemaArray[0]} />
-          <ArchiveModel url={cinemaArray[1]} />
-          {/* <ArchiveModel url={cinemaArray[2]} />
-          <ArchiveModel url={cinemaArray[3]} />
-          <ArchiveModel url={cinemaArray[4]} /> */}
-        </div>
-        <div className="archiveColumn">
-          <ArchiveModel url={cinemaArray[5]} />
-          <ArchiveModel url={cinemaArray[6]} />
-          {/*<ArchiveModel url={cinemaArray[7]} />
-          <ArchiveModel url={cinemaArray[8]} />
-          <ArchiveModel url={cinemaArray[9]} /> */}
-        </div>
-        <div className="archiveColumn">
-          <ArchiveModel url={cinemaArray[10]} />
-          <ArchiveModel url={cinemaArray[11]} />
-          {/*<ArchiveModel url={cinemaArray[12]} />
-          <ArchiveModel url={cinemaArray[13]} />
-          <ArchiveModel url={cinemaArray[14]} /> */}
-        </div>
-        <div className="archiveColumn">
-          <ArchiveModel url={cinemaArray[15]} />
-          <ArchiveModel url={cinemaArray[16]} />
-          {/* <ArchiveModel url={cinemaArray[17]} />
-          <ArchiveModel url={cinemaArray[18]} />
-          <ArchiveModel url={cinemaArray[19]} /> */}
-        </div>
-        <div className="archiveColumn">
-          <ArchiveModel url={cinemaArray[20]} />
-          <ArchiveModel url={cinemaArray[21]} />
-          {/*<ArchiveModel url={cinemaArray[22]} />
-          <ArchiveModel url={cinemaArray[23]} />
-          <ArchiveModel url={cinemaArray[24]} /> */}
-        </div>
+      <div className="indexWrapper">
+        <ArchiveModel url={cinemaArray[0]} />
       </div>
     </div>
   );

@@ -1,3 +1,27 @@
+@import url("https://rsms.me/inter/inter.css");
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  padding: 2.5em;
+}
+
+body {
+  background: #f0f0f0;
+  font-family: inter;
+}
+
 .container {
   position: relative;
   width: 100%;
@@ -19,12 +43,36 @@
   height: 18vh;
   display: inline-block;
   overflow: hidden;
+  position: relative;
   padding: 0;
   margin: 0;
+  border: 2px solid black;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+
+  -webkit-box-shadow: inset 0 0 8px rgb(0, 0, 0), 0 0 8px rgb(0, 0, 0);
+  -moz-box-shadow: inset 0 0 8px rgb(0, 0, 0), 0 0 8px rgb(0, 0, 0);
+  box-shadow: inset 0 0 8px rgb(0, 0, 0), 0 0 8px rgb(0, 0, 0);
+
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
 }
 
 .view:hover .cinemaName {
   display: block;
+}
+
+.view:hover {
+  -webkit-box-shadow: inset 0 0 8px rgb(255, 255, 255),
+    0 0 8px rgb(255, 255, 255);
+  -moz-box-shadow: inset 0 0 8px rgb(255, 255, 255), 0 0 8px rgb(255, 255, 255);
+  box-shadow: inset 0 0 8px rgb(255, 255, 255), 0 0 8px rgb(255, 255, 255);
+
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
 }
 
 .cinemaName {
@@ -33,9 +81,9 @@
   padding: 0;
   font-family: PINUP;
   font-size: 2em;
-  color: white;
   line-height: 20vh;
+  user-select: none;
   display: none;
   user-select: none;
-  z-index: -10;
+  color: white;
 }
