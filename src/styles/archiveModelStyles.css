@@ -1,0 +1,41 @@
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.canvas {
+  position: fixed !important;
+  top: 0px;
+  left: 0px;
+  width: 100vw !important;
+  height: 100vh !important;
+}
+
+.view {
+  width: 20vw;
+  height: 18vh;
+  display: inline-block;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+.view:hover .cinemaName {
+  display: block;
+}
+
+.cinemaName {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  font-family: PINUP;
+  font-size: 2em;
+  color: white;
+  line-height: 20vh;
+  display: none;
+  user-select: none;
+  z-index: -10;
+}
