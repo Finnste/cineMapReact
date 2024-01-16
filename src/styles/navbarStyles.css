@@ -1,6 +1,6 @@
 .navbar {
   display: grid;
-  grid-template-columns: 40vw 20vw 20vw 20vw;
+  grid-template-columns: 61vw 13vw 13vw 13vw;
   background-color: #000000;
 }
 
@@ -12,7 +12,6 @@
   align-items: center;
   display: flex;
   justify-content: center;
-  font-family: PINUP;
   /* border: 2px solid red; */
   padding: 0 30px 0 10px;
   margin: 1rem;
@@ -38,4 +37,43 @@
   justify-content: center;
   grid-column: span 1;
   height: 8vh;
+}
+/* Small devices such as large phones (640px and up) */
+@media (max-width: 767px) {
+  #mainTitle {
+    font-size: 1em;
+  }
+  #subTitle {
+    font-size: 0.6em;
+  }
+}
+
+/* Medium devices such as tablets (768px and up) */
+@media (min-width: 768px) {
+  #mainTitle {
+    font-size: 1.5em;
+  }
+  #subTitle {
+    font-size: 0.8em;
+  }
+}
+
+/* Large devices such as laptops (1024px and up) */
+@media (min-width: 1024px) {
+  #mainTitle {
+    font-size: 2em;
+  }
+  #subTitle {
+    font-size: 1.2em;
+  }
+}
+
+/* Largest devices such as desktops (1280px and up) */
+@media (min-width: 1280px) {
+  #mainTitle {
+    font-size: 3em;
+  }
+  #subTitle {
+    font-size: 1.2em;
+  }
 }

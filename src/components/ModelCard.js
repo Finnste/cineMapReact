@@ -3,6 +3,8 @@ import { Canvas, useThree } from "@react-three/fiber";
 import { useLoader } from "@react-three/fiber";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
+import "../styles/modelCardStyle.css"
+import "../styles/cardStyles.css";
 
 const CameraController = () => {
   const { camera, gl } = useThree();
@@ -37,7 +39,7 @@ const Obj = (props) => {
 
 export default function ModelCard(props) {
   return (
-    <div style={{border: "2px solid white"}}>
+    <div className="modelCard">
       <Canvas style={{height: "100%", width: "100%", margin: "0" }}>
         <CameraController />
         <Obj colors={props.colors} name={props.name}/>

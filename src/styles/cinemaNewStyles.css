@@ -11,20 +11,63 @@ body {
 .columnWrapper {
   position: relative;
   display: flex;
-  justify-content: space-evenly;
-  gap: 4rem;
-  width: 100%;
-  overflow: scroll;
-
+  flex-direction: row;
+  max-width: 100vw;
+  height: 100vh;
 }
 
 .column {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  width: 20vw;
-  height: 90vh;
-  text-align: center;
-  /* border: 2px solid white; */
+  height: 100vh;
+  border: 2px solid red;
   overflow: scroll;
+}
+
+/* Small devices such as large phones (640px and up) */
+@media (max-width: 767px) {
+  .columnWrapper {
+    display: block;
+    height: 100vh;
+    overflow: scroll;
+  }
+  .subColumns {
+    overflow: scroll;
+    display: block;
+    border: 2px solid pink;
+  }
+  .column {
+    width: 100vw;
+  }
+}
+
+/* Medium devices such as tablets (768px and up) */
+@media (min-width: 768px) {
+  .subColumns {
+    overflow: scroll;
+    display: block;
+  }
+  .column {
+    width: 50vw;
+  }
+}
+
+/* Large devices such as laptops (1024px and up) */
+@media (min-width: 1024px) {
+  .subColumns {
+    overflow: scroll;
+    display: flex;
+  }
+  .column {
+    width: 33vw;
+  }
+}
+
+/* Largest devices such as desktops (1280px and up) */
+@media (min-width: 1280px) {
+  .column {
+    width: 25vw;
+  }
+  .subColumns {
+    overflow: scroll;
+    display: flex;
+  }
 }

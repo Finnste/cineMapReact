@@ -1,7 +1,6 @@
 .questionCard {
-  border: 2px solid white;
+  border: 2px solid yellow;
   padding: 0 0.6em;
-  margin: 1em 0;
 }
 
 .questionTitle {
@@ -9,6 +8,10 @@
   font-size: 1em;
   color: white;
   padding-bottom: 1em;
+}
+.answers {
+  max-width: 100%;
+  border: 2px solid green;
 }
 
 .questionAnswer {
@@ -20,7 +23,7 @@
   border-radius: 5px;
   padding: 0.6em 1em;
   width: max-content;
-  max-width: 70%;
+  max-width: 60%;
   margin-bottom: 2em;
   /* overflow: wrap; */
 }
@@ -30,4 +33,5 @@
   align-items: end;
   margin-right: 0;
   margin-left: auto;
+
 }

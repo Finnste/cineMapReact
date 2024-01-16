@@ -49,71 +49,62 @@ const Cinema = ({ data }) => {
     ],
   ];
 
+  const cardArray = [
+    <Card type="image" cinema={cinemaData.name} num="1" />,
+    <Card type="image" cinema={cinemaData.name} num="2" />,
+    <Card type="question" question={questions[1][0]} answers={questions[1]} />,
+    <Card type="image" cinema={cinemaData.name} num="4" />,
+    <Card type="image" cinema={cinemaData.name} num="6" />,
+    <Card type="question" question={questions[2][0]} answers={questions[2]} />,
+    <Card type="image" cinema={cinemaData.name} num="3" />,
+    <Card type="question" question={questions[3][0]} answers={questions[3]} />,
+    <Card type="image" cinema={cinemaData.name} num="8" />,
+    <Card type="question" question={questions[4][0]} answers={questions[4]} />,
+    <Card type="question" question={questions[5][0]} answers={questions[5]} />,
+    <Card type="question" question={questions[6][0]} answers={questions[6]} />,
+    <Card type="question" question={questions[7][0]} answers={questions[7]} />,
+    <Card type="model" />,
+    <Card type="blurb" />,
+    <Card type="question" question={questions[0][0]} answers={questions[0]} />,
+    <Card type="image" cinema={cinemaData.name} num="7" />,
+    <Card type="image" cinema={cinemaData.name} num="5" />,
+    <Card type="image" cinema={cinemaData.name} num="9" />,
+  ];
+
+  var chunks = [];
+  for (let i = 0; i < cardArray.length; i += 4) {
+    const chunk = cardArray.slice(i, i + 4);
+    chunks.push(chunk);
+  }
+
   return (
     <div>
       <FontStyles />
       <Navbar />
       <div className="columnWrapper">
-        <div className="column">
-          <Card type="image" cinema={cinemaData.name} num="1" />
-          <Card type="image" cinema={cinemaData.name} num="2" />{" "}
-          <Card
-            type="question"
-            question={questions[1][0]}
-            answers={questions[1]}
-          />
-          <Card type="image" cinema={cinemaData.name} num="4" />
-          <Card type="image" cinema={cinemaData.name} num="6" />
-        </div>
-        <div className="column">
-          
-          <Card
-            type="question"
-            question={questions[2][0]}
-            answers={questions[2]}
-          />{" "}
-          <Card type="image" cinema={cinemaData.name} num="3" />
-          <Card
-            type="question"
-            question={questions[3][0]}
-            answers={questions[3]}
-          />
-          <Card type="image" cinema={cinemaData.name} num="8" />
-          <Card
-            type="question"
-            question={questions[4][0]}
-            answers={questions[4]}
-          />
-        </div>
-        <div className="column">
-          <Card
-            type="question"
-            question={questions[5][0]}
-            answers={questions[5]}
-          />
-          <Card
-            type="question"
-            question={questions[6][0]}
-            answers={questions[6]}
-          />
-          <Card
-            type="question"
-            question={questions[7][0]}
-            answers={questions[7]}
-          />{" "}
-          <Card type="model" />
-        </div>
-        <div className="column"><Card type="blurb" />
-          <Card
-            type="question"
-            question={questions[0][0]}
-            answers={questions[0]}
-          /></div>
-        <Card type="image" cinema={cinemaData.name} num="7" />
-        <div className="column">
-          {" "}
-          <Card type="image" cinema={cinemaData.name} num="5" />
-          <Card type="image" cinema={cinemaData.name} num="9" />
+        <div className="subColumns">
+          <div className="column">
+            {chunks[0].map((item, index) => {
+              return item;
+            })}
+          </div>
+          <div className="column">
+            {chunks[1].map((item, index) => {
+              return item;
+            })}
+          </div>
+        </div>{" "}
+        <div className="subColumns">
+          <div className="column">
+            {chunks[2].map((item, index) => {
+              return item;
+            })}
+          </div>
+          <div className="column">
+            {chunks[3].map((item, index) => {
+              return item;
+            })}
+          </div>{" "}
         </div>
       </div>
     </div>

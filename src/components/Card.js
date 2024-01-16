@@ -4,16 +4,33 @@ import BlurbCard from "../components/BlurbCard";
 import QuestionCard from "../components/QuestionCard";
 import QuoteCard from "../components/QuoteCard";
 import ModelCard from "../components/ModelCard";
+import "../styles/cardStyles.css";
 
 export default function Card(props) {
   switch (props.type) {
     case "image":
-      return <ImageCard cinema="riocinema" num={props.num} />;
+      return (
+        <div className="cardWrapper">
+          <ImageCard cinema="riocinema" num={props.num} />
+        </div>
+      );
     case "model":
-      return <ModelCard colors={["white", "yellow"]} name="riocinema"/>;
+      return (
+        <div className="cardWrapper">
+          <ModelCard colors={["white", "yellow"]} name="riocinema" />
+        </div>
+      );
     case "blurb":
-      return <BlurbCard />;
+      return (
+        <div className="cardWrapper">
+          <BlurbCard />
+        </div>
+      );
     case "question":
-      return <QuestionCard question={props.question} answers={props.answers} />;
+      return (
+        <div className="cardWrapper">
+          <QuestionCard question={props.question} answers={props.answers} />
+        </div>
+      );
   }
 }
