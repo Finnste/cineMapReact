@@ -104,7 +104,8 @@ const Cinema = ({ data }) => {
             {chunks[3].map((item, index) => {
               return item;
             })}
-          </div>{" "}
+          </div>
+          
         </div>
       </div>
     </div>

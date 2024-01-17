@@ -18,7 +18,7 @@ const Navbar = () => {
         </div>
         <div className="item">MAP</div>
         <div className="item">INDEX</div>
-        <div className="item">ADD TO THE ARCHIVE</div>
+        <div className="item">ARCHIVE</div>
       </nav>
     </div>
   );
