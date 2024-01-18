@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "gatsby";
 import { Canvas, useThree, useLoader } from "@react-three/fiber";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-import * as THREE from 'three'; 
+import * as THREE from "three";
 import { View, PerspectiveCamera, OrbitControls } from "@react-three/drei";
 
 import useRefs from "react-use-refs";
@@ -287,20 +287,21 @@ export default function Modelindex(props) {
 
   return (
     <div ref={container} className="container">
-      {cinemaModels.map((item, index) => {
-        console.log(item);
-        return (
-          <Link
-            to="/cinema-new"
-            state={{ cinemaName: item.name }}
-            className="LinkStyle"
-          >
-          <div ref={item.view} className="view" key={index}>
-            <h2 className="cinemaName">{item.name}</h2>
-          </div>
-           </ Link>
-        );
-      })}
+      <div className="archiveModelColumn">
+          {cinemaModels.map((item, index) => {
+            return (
+              <Link
+                to="/cinema-new"
+                state={{ cinemaName: item.name }}
+                className="LinkStyle"
+              >
+                <div ref={item.view} className="view" key={index}>
+                  <h2 className="cinemaName">{item.name}</h2>
+                </div>
+              </Link>
+            );
+          })}
+      </div>
 
       <Canvas eventSource={container} className="canvas">
         {cinemaModels.map((item, index) => {
@@ -315,7 +316,7 @@ export default function Modelindex(props) {
                 scale={item.scale}
                 gltfSrc={item.gltfSrc}
               />
-              <OrbitControls makeDefault />
+              {/* <OrbitControls makeDefault /> */}
             </View>
           );
         })}

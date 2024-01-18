@@ -25,9 +25,14 @@ body {
 .container {
   position: relative;
   width: 100%;
-  height: 100%;
-  display: flex;
-  flex-wrap: wrap;
+  height: 92vh;
+  overflow: auto;
+}
+
+.archiveModelColumn {
+  width: 100vw;
+  height: 100vh;
+  border: 2px solid yellow;
 }
 
 .canvas {
@@ -39,18 +44,17 @@ body {
 }
 
 .view {
-  width: 20vw;
-  height: 18vh;
+  width: 100%;
+  height: calc((100vh - 140px)/5);
   display: inline-block;
   overflow: hidden;
   position: relative;
   padding: 0;
   margin: 0;
-  border: 2px solid black;
+  border: 2px solid rgb(255, 255, 255);
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
-
   -webkit-box-shadow: inset 0 0 8px rgb(0, 0, 0), 0 0 8px rgb(0, 0, 0);
   -moz-box-shadow: inset 0 0 8px rgb(0, 0, 0), 0 0 8px rgb(0, 0, 0);
   box-shadow: inset 0 0 8px rgb(0, 0, 0), 0 0 8px rgb(0, 0, 0);
@@ -86,4 +90,61 @@ body {
   display: none;
   user-select: none;
   color: white;
+}
+
+/* Small devices such as large phones (640px and up) */
+@media (max-width: 767px) {
+  .archiveModelColumn {
+    -webkit-column-count: 1;
+    -moz-column-count: 1;
+    column-count: 1;
+    overflow: scroll;
+    display: flex;
+    flex-direction: column;
+    height: 88vh;
+
+  }
+  .view {
+    width: 100vw;
+    height: 25vh;
+  }
+
+}
+
+/* Medium devices such as tablets (768px and up) */
+@media (min-width: 768px) {
+  .archiveModelColumn {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+    overflow: scroll;
+    display: block;
+    height: auto;
+  }
+  .view {
+    width: 50vw;
+    height: 25vh;
+  }
+}
+
+/* Large devices such as laptops (1024px and up) */
+@media (min-width: 1024px) {
+  .archiveModelColumn {
+    -webkit-column-count: 5;
+    -moz-column-count: 5;
+    column-count: 5;
+    display: block;
+  }
+  .view {
+    width: 20vw;
+    height: calc((100vh - 140px)/5);
+  }
+}
+
+/* Largest devices such as desktops (1280px and up) */
+@media (max-height: 700px) {
+  .view {
+    height: 30vh;
+  }
+  
 }

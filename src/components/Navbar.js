@@ -9,9 +9,9 @@ const Navbar = () => {
       <FontStyles />
       <nav className="navbar">
         <div className="headerTitle">
-          <div id="mainTitle">
-           CINEMAP
-          </div>
+          <Link className="link" to="/cinema-archive">
+            <div id="mainTitle">CINEMAP</div>{" "}
+          </Link>
           <div id="subTitle">
             A Collaborative Archive of London's 25 Independent Cinemas
           </div>

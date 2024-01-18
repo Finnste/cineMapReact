@@ -82,7 +82,7 @@ const Cinema = ({ data }) => {
       <FontStyles />
       <Navbar />
       <div className="columnWrapper">
-        <div className="subColumns">
+        <div className="subColumn">
           <div className="column">
             {chunks[0].map((item, index) => {
               return item;
@@ -94,7 +94,7 @@ const Cinema = ({ data }) => {
             })}
           </div>
         </div>{" "}
-        <div className="subColumns">
+        <div className="subColumn">
           <div className="column">
             {chunks[2].map((item, index) => {
               return item;

@@ -4,7 +4,16 @@
   display: grid;
   grid-template-columns: 61vw 13vw 13vw 13vw;
   background-color: #000000;
-  height: min-content;
+  height: 8vh;
+}
+
+.link {
+  color: #000000;
+  text-decoration: none;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  height: auto;
 }
 
 .headerTitle {
@@ -42,7 +51,8 @@
 @media (max-width: 767px) {
   .navbar {
     grid-template-columns: 33vw 33vw 33vw;
-    grid-template-rows: 8vh 4vh;
+    grid-template-rows: 80px 40px;
+    height: 120px;
   }
   .headerTitle {
     grid-column: span 3;
@@ -64,7 +74,8 @@
 @media (min-width: 768px) {
   .navbar {
     grid-template-columns: 33vw 33vw 33vw;
-    grid-template-rows: 8vh 4vh;
+    grid-template-rows: 80px 40px;
+    height: 120px;
   }
   .headerTitle {
     padding: 20px 30px 20px 10px;
@@ -88,7 +99,8 @@
 @media (min-width: 1024px) {
   .navbar {
     grid-template-columns: 61vw 13vw 13vw 13vw;
-    grid-template-rows: 8vh
+    grid-template-rows: 120px;
+    height: 120px;
   }
   .headerTitle {
     grid-column: 1 / span 1;
