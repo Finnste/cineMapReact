@@ -2,7 +2,6 @@ import React from "react";
 import ImageCard from "../components/ImageCard";
 import BlurbCard from "../components/BlurbCard";
 import QuestionCard from "../components/QuestionCard";
-import QuoteCard from "../components/QuoteCard";
 import ModelCard from "../components/ModelCard";
 import "../styles/cardStyles.css";
 

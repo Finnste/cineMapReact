@@ -46,7 +46,7 @@ const cinemaArchive = () => {
     <div className="archiveBody">
       <Navbar />
       <div className="indexWrapper">
-        <ArchiveModel url={cinemaArray[0]} />
+        <ArchiveModel/>
       </div>
     </div>
   );

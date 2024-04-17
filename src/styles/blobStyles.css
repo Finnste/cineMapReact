@@ -10,7 +10,7 @@
   margin: 4em auto;
   width: min-content;
   max-height: 80%;
-  border: 4px solid var(--secondary-color);
+  /* border: 4px solid var(--secondary-color); */
   border-radius: 50%;
   -webkit-box-shadow: 0 0 5px var(--secondary-color);
   -moz-box-shadow: 0 0 5px var(--secondary-color);

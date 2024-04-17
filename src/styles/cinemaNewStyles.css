@@ -23,7 +23,7 @@ body {
 
 .column {
   height: 100vh;
-  border: 2px solid blue;
+  border: 2px solid white;
   overflow: scroll;
 }
 
@@ -37,7 +37,7 @@ body {
   .subColumn {
     overflow: hidden;
     display: block;
-    border: 2px solid pink;
+    /* border: 2px solid pink; */
     height: auto;
   }
   .column {
@@ -55,13 +55,13 @@ body {
     overflow: scroll;
     display: block;
     height: 88vh;
-    border: 2px solid green;
+    /* border: 2px solid green; */
   }
   .column {
     width: 50vw;
     height: auto;
     overflow: hidden;
-    border: 2px solid pink;
+    /* border: 2px solid pink; */
   }
 }
 

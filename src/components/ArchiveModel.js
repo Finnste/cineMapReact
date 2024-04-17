@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "gatsby";
 import { Canvas, useThree, useLoader } from "@react-three/fiber";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-import * as THREE from "three";
 import { View, PerspectiveCamera, OrbitControls } from "@react-three/drei";
 
 import useRefs from "react-use-refs";
@@ -288,7 +287,8 @@ export default function Modelindex(props) {
   return (
     <div ref={container} className="container">
       <div className="archiveModelColumn">
-          {cinemaModels.map((item, index) => {
+        {cinemaModels.map((item, index) => {
+          if (item.name === "Rio Cinema") {
             return (
               <Link
                 to="/cinema-new"
@@ -300,25 +300,49 @@ export default function Modelindex(props) {
                 </div>
               </Link>
             );
-          })}
+          } else {
+            return (
+              <div ref={item.view} className="view" key={index}>
+                <h2 className="cinemaName">{item.name}</h2>
+              </div>
+            );
+          }
+        })}
       </div>
 
       <Canvas eventSource={container} className="canvas">
         {cinemaModels.map((item, index) => {
-          return (
-            <View track={item.view} className="view" key={index}>
-              <PerspectiveCamera makeDefault fov={40} position={[0, 0, 6]} />
-              <Obj
-                color="white"
-                name={item.name}
-                position={item.position}
-                rotation={item.rotation}
-                scale={item.scale}
-                gltfSrc={item.gltfSrc}
-              />
-              {/* <OrbitControls makeDefault /> */}
-            </View>
-          );
+          if (item.name === "Rio Cinema") {
+            return (
+              <View track={item.view} className="view" key={index}>
+                <PerspectiveCamera makeDefault fov={40} position={[0, 0, 6]} />
+                <Obj
+                  color="white"
+                  name={item.name}
+                  position={item.position}
+                  rotation={item.rotation}
+                  scale={item.scale}
+                  gltfSrc={item.gltfSrc}
+                />
+                {/* <OrbitControls makeDefault /> */}
+              </View>
+            );
+          } else {
+            return (
+              <View track={item.view} className="view" key={index}>
+                <PerspectiveCamera makeDefault fov={40} position={[0, 0, 6]} />
+                <Obj
+                  color="white"
+                  name={item.name}
+                  position={item.position}
+                  rotation={item.rotation}
+                  scale={item.scale}
+                  gltfSrc={item.gltfSrc}
+                />
+                <OrbitControls makeDefault />
+              </View>
+            );
+          }
         })}
       </Canvas>
     </div>
