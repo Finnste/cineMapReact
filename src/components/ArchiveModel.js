@@ -317,7 +317,7 @@ export default function Modelindex(props) {
               <View track={item.view} className="view" key={index}>
                 <PerspectiveCamera makeDefault fov={40} position={[0, 0, 6]} />
                 <Obj
-                  color="white"
+                  color="red"
                   name={item.name}
                   position={item.position}
                   rotation={item.rotation}
