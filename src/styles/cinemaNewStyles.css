@@ -71,6 +71,7 @@ body {
     height: 92vh;
     overflow: hidden;
     display: flex;
+    border: solid 2px red;
   }
   .column {
     height: 92vh;

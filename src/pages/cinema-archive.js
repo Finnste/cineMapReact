@@ -2,6 +2,7 @@ import React from "react";
 import "../styles/cinemaArchiveStyles.css";
 import Navbar from "../components/Navbar";
 import ArchiveModel from "../components/ArchiveModel.js";
+import { GlobalStyle } from "../styles/globalStyles";
 
 const cinemaArchive = () => {
   var cinemaArray = [
@@ -46,7 +47,7 @@ const cinemaArchive = () => {
     <div className="archiveBody">
       <Navbar />
       <div className="indexWrapper">
-        <ArchiveModel/>
+        <ArchiveModel />
       </div>
     </div>
   );

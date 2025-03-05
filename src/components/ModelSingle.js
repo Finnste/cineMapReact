@@ -29,7 +29,8 @@ const Obj = (props) => {
     <>
       <lineSegments position={[0, 1, -2]} rotation={[0, 4, 0]} scale={[0.2,0.2,0.2]}>
         <edgesGeometry attach="geometry" args={geo} />
-        <lineBasicMaterial attach="material" color={props.colors[0]} />
+        <lineBasicMaterial attach="material" color={props.colors[0]} 	linewidth={1}
+        />
       </lineSegments>
     </>
   );

@@ -4,6 +4,7 @@ import "../styles/blurbCardStyles.css";
 import FontStyles from "../styles/globalStyles";
 
 
+
 export default function BlurbCard() {
   return (
     <div className="cardWarpper">

@@ -3,25 +3,7 @@ import FontStyles from "../styles/globalStyles";
 import { graphql, Link } from "gatsby";
 import Navbar from "../components/Navbar";
 import Card from "../components/Card";
-import FilmReelSide from "../components/FilmReelSide";
 import "../styles/cinemaNewStyles.css";
-import { styled } from "styled-components";
-
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 100vw;
-  height: 100vh;
-`;
-
-const FilmReel = styled.div`
-  background-color: black;
-  width: 16.4vw;
-  height: 100vh;
-  margin: 0;
-  overflow: scroll;
-`;
 
 const Cinema = ({ data }) => {
   var cinemaData = data.wpgraphql.cinemas.nodes[3].cinema;
@@ -91,7 +73,7 @@ const Cinema = ({ data }) => {
 
   var chunks = [];
   for (let i = 0; i < cardArray.length; i += 4) {
-    const chunk = cardArray.slice(i, i + 5);
+    const chunk = cardArray.slice(i, i + 4);
     chunks.push(chunk);
   }
 
@@ -99,68 +81,34 @@ const Cinema = ({ data }) => {
     <div>
       <FontStyles />
       <Navbar />
-      <Wrapper>
-        <FilmReelSide />
-        <FilmReel>
-          {chunks[0].map((item, index) => {
-            return item;
-          })}
-        </FilmReel>
-        <FilmReelSide />
-        <FilmReel>
-          {chunks[1].map((item, index) => {
-            return item;
-          })}
-        </FilmReel>
-        <FilmReelSide />
-        <FilmReel>
-          {chunks[2].map((item, index) => {
-            return item;
-          })}
-        </FilmReel>
-        <FilmReelSide />
-        <FilmReel>
-          {chunks[3].map((item, index) => {
-            return item;
-          })}
-        </FilmReel>
-        <FilmReelSide />
-        <FilmReel>
-        {chunks[4].map((item, index) => {
-            return item;
-          })}
-        </FilmReel>
-        <FilmReelSide />
-      </Wrapper>
+      <div className="columnWrapper">
+        <div className="subColumn">
+          <div className="column">
+            {chunks[0].map((item, index) => {
+              return item;
+            })}
+          </div>
+          <div className="column">
+            {chunks[1].map((item, index) => {
+              return item;
+            })}
+          </div>
+        </div>{" "}
+        <div className="subColumn">
+          <div className="column">
+            {chunks[2].map((item, index) => {
+              return item;
+            })}
+          </div>
+          <div className="column">
+            {chunks[3].map((item, index) => {
+              return item;
+            })}
+          </div>
+          
+        </div>
+      </div>
     </div>
-
-    //   <div className="columnWrapper">
-    //     <div className="subColumn">
-    //       <div className="column">
-    //         {chunks[0].map((item, index) => {
-    //           return item;
-    //         })}
-    //       </div>
-    //       <div className="column">
-    //         {chunks[1].map((item, index) => {
-    //           return item;
-    //         })}
-    //       </div>
-    //     </div>{" "}
-    //     <div className="subColumn">
-    //       <div className="column">
-    //         {chunks[2].map((item, index) => {
-    //           return item;
-    //         })}
-    //       </div>
-    //       <div className="column">
-    //         {chunks[3].map((item, index) => {
-    //           return item;
-    //         })}
-    //       </div>
-    //     </div>
-    //   </div>
-    // </div>
   );
 };
 
